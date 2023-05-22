@@ -19,5 +19,12 @@ export default function solution(content){
 
   console.log(`Соотношение рейтинговых игр против нерейтинговых: ${ratedGames.length / unratedGames.length}`);
 
+  // Step 3
+  const openingsFullNames = normalizedData.reduce((acc, element) => {
+    acc.push(element[13])
+    return _.uniq(acc);
+  }, [])
+
+  console.log(openingsFullNames);
 
 }
