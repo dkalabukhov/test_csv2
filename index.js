@@ -27,4 +27,17 @@ export default function solution(content){
 
   console.log(openingsFullNames);
 
+  // Step 4
+  const victoriesOfWeakest = normalizedData.reduce((acc, element) => {
+    if (element[4] === 'White' && Number(element[7]) < Number(element[9])) {
+      acc.push(element);
+    } else if (element[4] === 'Black' && Number(element[7] > Number(element[9]))) {
+      acc.push(element);
+    }
+
+    return acc;
+  }, []);
+
+  console.log(`Количество побед игроков с меньшим рейтингом над игроками с большим: ${victoriesOfWeakest.length}`);
+
 }
