@@ -13,4 +13,11 @@ export default function solution(content){
   // Step 1
   console.log(`Количество партий: ${normalizedData.length}`);
 
+  // Step 2
+  const ratedGames = normalizedData.filter((game) => game[1] === 'TRUE');
+  const unratedGames = normalizedData.filter((game) => game[1] === 'FALSE');
+
+  console.log(`Соотношение рейтинговых игр против нерейтинговых: ${ratedGames.length / unratedGames.length}`);
+
+
 }
